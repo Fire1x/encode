@@ -16,35 +16,33 @@ def decode(encoded_password):
 
 def main():
     while True:
-        print("\nMenu:")
-        print("1. Encode Password")
-        print("2. Decode Password")
-        print("3. Exit")
-        choice = input("Enter your choice: ")
+        print("\nMenu")
+        print("-------------")
+        print("1. Encode")
+        print("2. Decode")
+        print("3. Quit")
+        choice = input("Please enter an option: ")
 
         if choice == "1":
-            password = input("Enter the password to encode (8 digits): ")
-            if len(password) != 8 or not password.isdigit():
-                print("Invalid input. Password must be 8 digits.")
-            else:
-                encoded_password = encode(password)
-                print("Encoded Password:", encoded_password)
+            password = input("Please enter your password to encode: ")
+            encoded_password = encode(password)
+            print("Your password has been encoded and stored!")
+            print("\nMenu")
+            print("-------------")
 
         elif choice == "2":
-            encoded_password = input("Enter the encoded password (8 digits): ")
-            if len(encoded_password) != 8 or not encoded_password.isdigit():
-                print("Invalid input. Encoded password must be 8 digits.")
-            else:
-                decoded_password = decode(encoded_password)
-                print("Decoded Password:", decoded_password)
+            encoded_password = input("Please enter the encoded password: ")
+            decoded_password = decode(encoded_password)
+            print(f"The encoded password is {encoded_password}, and the original password is {decoded_password}.")
+            print("\nMenu")
+            print("-------------")
 
         elif choice == "3":
             print("Exiting program.")
             break
 
         else:
-            print("Invalid choice. Please enter 1, 2, or 3.")
+            print("Invalid option. Please enter 1, 2, or 3.")
 
 if __name__ == "__main__":
     main()
-    
